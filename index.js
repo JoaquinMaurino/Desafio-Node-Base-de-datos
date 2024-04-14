@@ -8,12 +8,11 @@ import routerEditorial from "./routes/editorial.routes.js";
 const PORT = 3000;
 //Ejecuto express
 const app = express();
+
 //Middlewares:
 //Permite el soporte de json en las request
 app.use(express.json());
 
-//
-mongoose.set("strictPopulate", false);
 //DB Connection:
 mongoose
   .connect(
@@ -32,9 +31,6 @@ app.listen(PORT, () => {
 });
 
 //Routes
-app.get("/", (req, res) => {
-  res.send("Hello from Node API");
-});
 app.use("/api/books", routerLibro);
 app.use("/api/authors", routerAutor);
 app.use("/api/editorials", routerEditorial);

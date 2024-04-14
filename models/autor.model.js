@@ -1,5 +1,7 @@
 import { Schema, model } from "mongoose";
 
+
+//Definimos el esquema de mongoose para Autor, el dni debe cumplir con el formato especificado, todos los atributos son requeridos.
 const AutorSchema = new Schema({
   nombre: {
     type: String,
@@ -10,8 +12,9 @@ const AutorSchema = new Schema({
     required: true,
   },
   dni: {
-    type: String, // Cambiar a tipo String para poder aplicar expresiones regulares
+    type: String, // tipo de dato => String para poder aplicar expresiones regulares y validar su formato
     required: true,
+    unique: true,
     match: [/^\d{8}$/, "El DNI debe tener 8 números sin guiones ni espacios"]
   },
   nacionalidad: {

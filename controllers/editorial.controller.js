@@ -6,6 +6,7 @@ import {
   deleteEditorial,
 } from "../services/editorial.services.js";
 
+//Crea una nueva editorial tomando el objeto que enviamos por el body
 export const addEditorial = async (req, res) => {
   try {
     const editorial = await createEditorial(req.body);
@@ -15,6 +16,7 @@ export const addEditorial = async (req, res) => {
   }
 };
 
+//Busca y retorna todas las editoriales
 export const getEditorials = async (req, res) => {
   try {
     const editorials = await findEditorials();
@@ -24,7 +26,7 @@ export const getEditorials = async (req, res) => {
   }
 };
 
-//Busca y retorna un autor buscando por su ID
+//Busca y retorna una editorial buscando por su ID
 export const getEditorial = async (req, res) => {
   try {
     const id = req.params.editorialID;
@@ -35,7 +37,7 @@ export const getEditorial = async (req, res) => {
   }
 };
 
-//Busca un autor por su ID y actualiza los campos que pasemos por body
+//Busca una editorial por su ID y actualiza los campos que pasemos por body
 export const updatedEditorialById = async (req, res) => {
   try {
     const id = req.params.editorialID;
@@ -47,7 +49,7 @@ export const updatedEditorialById = async (req, res) => {
   }
 };
 
-//Busca y elimina un autor por su id
+//Busca y elimina una editorial por su id
 export const deleteEditorialById = async (req, res) => {
   try {
     const id = req.params.editorialID;

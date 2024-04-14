@@ -12,8 +12,8 @@ const routerLibro = Router();
 /* La ruta general de libros soporta el filtrado por categoria mediante el formato de url:
 http://localhost:3000/api/books?categoria={categoria} */
 routerLibro.get("/", getBooks);
-routerLibro.post("/", addBook);
 routerLibro.get("/:bookID", getBook);
+routerLibro.post("/", addBook);
 routerLibro.put("/:bookID", updateBookById);
 routerLibro.delete("/:bookID", deleteBookById);
 

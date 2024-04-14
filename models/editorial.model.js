@@ -12,6 +12,7 @@ const EditorialSchema = new Schema({
   cuit: {
     type: String, // Cambiar a tipo String para poder aplicar expresiones regulares
     required: true,
+    unique: true,
     match: [/^\d{2}-\d{8}-\d$/, "El CUIT debe tener el formato 00-12345678-9"]
   },
 });
